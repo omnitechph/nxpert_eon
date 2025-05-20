@@ -36,7 +36,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
     super.dispose();
   }
 
-  void _handleSubmit(){
+  void _handleSubmit() {
     ref.read(authControllerProvider.notifier).login(_userIdController.text, _passwordController.text);
   }
 
@@ -71,6 +71,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
       backgroundColor: const Color(0xFF101218),
       body: Stack(
         children: <Widget>[
+          Positioned.fill(child: Opacity(opacity: 0.25, child: Image.asset('assets/images/background.jpg', fit: BoxFit.cover))),
           SafeArea(
             child: Center(
               child: SingleChildScrollView(
@@ -78,24 +79,24 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   spacing: 18,
                   children: <Widget>[
-                    SizedBox(width: 400, child: Container(margin: const EdgeInsets.all(16), child: Image.asset('assets/images/nxpert_eon.png'))),
-                    const Text('NXPERT EON', style: TextStyle(color: Color(0xFFECECEC), fontSize: 32, fontWeight: FontWeight.bold)),
+                    SizedBox(width: 300, child: Container(margin: const EdgeInsets.all(16), child: Image.asset('assets/images/nxpert_eon.png'))),
+                    const Text('NXPERT EON', style: TextStyle(color: Colors.blue, fontSize: 32, fontWeight: FontWeight.bold)),
                     SizedBox(
-                      width: 400,
+                      width: 450,
                       child: Card(
                         margin: const EdgeInsets.symmetric(horizontal: 16),
                         color: Colors.grey[300],
                         elevation: 8,
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
                         child: Padding(
-                          padding: const EdgeInsets.all(16),
+                          padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 32),
                           child: Column(
                             mainAxisSize: MainAxisSize.min,
                             children: <Widget>[
                               const SizedBox(height: 16),
                               const Text("LOGIN CREDENTIALS", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
                               const SizedBox(height: 16),
-                              CustomTextField(controller: _userIdController, hintText: 'User ID', obscureText: false, focusNode: _userIdFocus, onSubmitted: (_) => _passwordFocus.requestFocus(), radius: 50),
+                              CustomTextField(prefixIcon: const Icon(Icons.person), controller: _userIdController, hintText: 'User ID', obscureText: false, focusNode: _userIdFocus, onSubmitted: (_) => _passwordFocus.requestFocus(), radius: 50),
                               const SizedBox(height: 12),
                               CustomTextField(
                                 controller: _passwordController,
@@ -106,6 +107,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                                 focusNode: _passwordFocus,
                                 onSubmitted: (_) => _handleSubmit(),
                                 radius: 50,
+                                prefixIcon: const Icon(Icons.lock),
                               ),
                               const SizedBox(height: 24),
                               CustomButton(text: 'LOGIN', onTap: _handleSubmit),
@@ -122,11 +124,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
           ),
         ],
       ),
-      bottomNavigationBar: Container(
-        color: const Color(0xFF3F4454),
-        padding: const EdgeInsets.all(8.0),
-        child: const Text('Ver. IT002', textAlign: TextAlign.center, style: TextStyle(color: Color(0xFFECECEC), fontSize: 16)),
-      ),
+      bottomNavigationBar: Container(color: const Color(0xFF3F4454), padding: const EdgeInsets.all(8.0), child: const Text('Ver. IT002', textAlign: TextAlign.center, style: TextStyle(color: Color(0xFFECECEC), fontSize: 16))),
     );
   }
 }
