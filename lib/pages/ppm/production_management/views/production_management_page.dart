@@ -19,7 +19,7 @@ class ProductionManagementPage extends StatelessWidget {
         spacing: 8,
         children: <Widget>[
           HeaderBanner(subtitle: 'PRODUCTION MANAGEMENT'),
-          Expanded(child: Center(child: Text('Production Management'))),
+          Expanded(child: Center(child: Text('Production Managements'))),
           Footer(),
         ],
       ),
