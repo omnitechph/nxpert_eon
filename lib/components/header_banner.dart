@@ -19,7 +19,7 @@ class _HeaderBannerState extends State<HeaderBanner> {
       final bool isSmallScreen = constraints.maxWidth<600;
       if(isSmallScreen){
         return Container(
-          height: 153,
+          height: 133,
           width: double.infinity,
           decoration: const BoxDecoration(gradient: LinearGradient(colors: <Color>[Color(0xFF1A3C5E), Color(0xFF0A1E33)], begin: Alignment.topLeft, end: Alignment.bottomRight)),
           alignment: Alignment.center,
