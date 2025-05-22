@@ -31,7 +31,7 @@ class _LogsTableState extends State<LogsTable> {
   List<PlutoColumn> _columns = <PlutoColumn>[];
   List<PlutoRow> _rows = <PlutoRow>[];
   late PlutoGridStateManager _stateManager;
-  int _rowsPerPage = 10;
+  int _rowsPerPage = 25;
   int _currentPage = 1;
   static const List<int> _perPageOptions = <int>[5, 10, 25, 50, 100, 500];
   List<PlutoRow> _checked = <PlutoRow>[];
