@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:hive/hive.dart';
 
 import '../../../../components/footer.dart';
 import '../../../../components/header_banner.dart';

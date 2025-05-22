@@ -15,6 +15,6 @@ class NxpertEonApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(title: 'NXPERT_EON', debugShowCheckedModeBanner: false, routerConfig: router, theme: ThemeData(fontFamily: 'Roboto'));
+    return MaterialApp.router(title: 'NXPERT EON', debugShowCheckedModeBanner: false, routerConfig: router, theme: ThemeData(fontFamily: 'Roboto'));
   }
 }
